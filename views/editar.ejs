@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualizar Cadastros</title>
+  <%- include ('partials/header.ejs') %>
+    <script type="text/javascript" href="Danki/public/scripts/pop_up.js"></script>
+</head>
+
+<body>
+  <%- include ('partials/navbar.ejs') %>
+    <div class="container" style="margin-top: 20px;">
+      <div class="card">
+        <div class="card-header">
+          <h2>Atualizar Cadastros</h2>
+        </div>
+        <div class="card-body">
+          <form method="post" action="" id="form">
+            <% lista.forEach(function(user){ %>
+              <div class="row">
+                <div class="col">
+                  <label>Nome</label>
+                  <input value='<%=user.nome %>' class="form-control" name="nome" placeholder="Digite o nome aqui">
+                  <br />
+                </div>
+                <div class="col">
+                  <label>Sobrenome</label>
+                  <input value='<%=user.sobrenome %>' class="form-control" name="sobrenome"
+                    placeholder="Digite o sobrenome">
+                  <br />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label>Cargo</label>
+                  <input value='<%=user.cargo %>' class="form-control" name="cargo" placeholder="Digite o cargo">
+                  <br />
+                </div>
+                <div class="col">
+                  <label>Idade</label>
+                  <input value='<%=user.idade %>' class="form-control" name="idade" placeholder="Digite a idade">
+                  <br />
+                </div>
+                <div class="col">
+                  <label>Nascimento</label>
+                  <input value='<%=user.nascimento %>' class="form-control" disabled name="nascimento"
+                    placeholder="Data de nascimento">
+                  <br />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label>Email</label>
+                  <input value='<%=user.email %>' class="form-control" name="email"
+                    placeholder="Digite o email (exemplo: email@email.com)">
+                  <br />
+                </div>
+                <div class="col-md-auto">
+                  <label>Contato</label>
+                  <input value='<%=user.celular %>' class="form-control" name="celular" placeholder="Celular">
+                  <br />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="inputCity" class="form-label">2º Contato </label>
+                  <input value='<%=user.telefone %>' class="form-control" name="telefone" placeholder="Telefone">
+                </div>
+                <div class="col">
+                  <label for="inputCity" class="form-label">CPF</label>
+                  <input value='<%=user.cpf %>' disabled class="form-control" name="cpf" placeholder="Digite o CPF">
+                </div>
+                <div class="col">
+                  <label for="inputCity" class="form-label">Nacionalidade</label>
+                  <input value='<%=user.nacionalidade %>' disabled class="form-control" name="nacionalidade"
+                    placeholder="Nacionalidade">
+                </div>
+                <div class="col">
+                  <label for="inputCity" class="form-label">Naturalidade</label>
+                  <input value='<%=user.naturalidade %>' disabled class="form-control" name="naturalidade"
+                    placeholder="Naturalidade">
+                </div>
+              </div>
+              </br>
+              <div class="row">
+                <div class="col">
+                  <select class="form-control" name="estadoCivil">
+                    <option selected value='<%=user.estado_civil %>'>Estado Civil</option>
+                    <option>Solteiro</option>
+                    <option>Casado</option>
+                    <option>Divórciado</option>
+                    <option>União Estável</option>
+                    <option>Viúvo</option>
+                  </select>
+                  <br />
+                </div>
+                <div class="col">
+                  <div class="col">
+                    <label for="inputCity" class="form-label">CEP</label>
+                    <input value='<%=user.sexo %>' class="form-control" name="cep" placeholder="Digite o CEP">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="inputCity" class="form-label">CEP</label>
+                  <input value='<%=user.cep %>' class="form-control" name="cep" placeholder="Digite o CEP">
+                </div>
+                <div class="col">
+                  <label for="inputCity" class="form-label">Cidade</label>
+                  <input value='<%=user.cidade %>' class="form-control" name="cidade" placeholder="Digite a cidade">
+                </div>
+                <div class="col">
+                  <label for="inputCity" class="form-label">Estado</label>
+                  <input value='<%=user.estado %>' class="form-control" name="estado" placeholder="Digite o estado">
+                </div>
+                <div class="col">
+                  <label for="inputCity" class="form-label">Numero</label>
+                  <input value='<%=user.numero %>' class="form-control" name="numero" placeholder="Digite numero">
+                </div>
+              </div>
+              <br />
+              <% }) %>
+                <button type="submit" class="btn btn-success">Atualizar</button>
+                <a href="/" class="btn btn-link">Voltar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+<%- include ('partials/footer.ejs') %>
+
+</html>

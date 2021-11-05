@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes | Listagem </title>
+  <%- include ('partials/header.ejs') %>
+</head>
+
+<body>
+  <%- include ('partials/navbar.ejs') %>
+    <div class="container" style="margin-top: 20px;">
+      <div class="card">
+        <div class="card-header" style="background-color: #198754; color: #fff;">
+          <h2>Clientes Cadastrados</h2>
+          <a class="btn btn-outline-light" href="/registrar">Cadastrar novo
+            funcionário</a>
+        </div>
+        <div class="card-body">
+          <table class="table" id="t01">
+            <tr>
+              <th scope="col" style="background-color: #eee;">ID</th>
+              <th scope="col" style="background-color: #eee;">Primeiro Nome</th>
+              <th scope="col" style="background-color: #eee;">Sobrenome</th>
+              <th scope="col" style="background-color: #eee;">Empresa</th>
+              <th scope="col" style="background-color: #eee;"></th>
+            </tr>
+
+            <% lista.forEach(function(user){ %>
+              <tr scope="row">
+                <td>
+                  <%= user.id %>
+                </td>
+                <td>
+                  <%= user.nome %>
+                </td>
+                <td>
+                  <%= user.sobrenome %>
+                </td>
+                <td>
+                  <%= user.idade %>
+                </td>
+                <td>
+                  <form method="put" action="/atualizar/<%= user.id %>" style="float: left; margin-right: 5px;">
+                    <button class="btn btn-success">Editar</button>
+                  </form>
+                  <form method="post" action="/excluir/<%= user.id %>" style="float: left">
+                    <button type="submit" class="btn btn-danger">X</button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+          </table>
+        </div>
+      </div>
+    </div>
+
+</body>
+<%- include ('partials/footer.ejs') %>
+
+</html>

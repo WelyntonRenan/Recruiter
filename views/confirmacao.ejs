@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualizar Cadastros</title>
+  <%- include ('partials/header.ejs') %>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+  <%- include ('partials/navbar.ejs') %>
+    <div class="container">
+      <div id="alerta">
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <div>
+            Dados Cadastrais Atualizados com Sucesso
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <H2>Dados Cadastrais</H2>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>Matrícula: </strong>
+            <%= id%>
+          </p>
+          <p>
+            <strong>Nome: </strong>
+            <%= nome %>
+              <%= sobrenome %>
+          </p>
+          <p>
+            <strong>Idade: </strong>
+            <%= idade%>
+          </p>
+          <p>
+            <strong>Data de nascimento: </strong>
+            <%= nascimento%>
+          </p>
+          <p>
+            <strong>Cargo: </strong>
+            <%= cargo%>
+          </p>
+          <p>
+            <strong>Email: </strong>
+            <%= email%>
+          </p>
+          <p>
+            <strong>Telefone: </strong>
+            <%= telefone%>
+          </p>
+          <p>
+            <strong>Celular: </strong>
+            <%= celular%>
+          </p>
+          <p>
+            <strong>CPF: </strong>
+            <%= cpf%>
+          </p>
+          <p>
+            <strong>Estado Civil: </strong>
+            <%= estado_civil %>
+          </p>
+          <p>
+            <strong>Sexo: </strong>
+            <%= sexo%>
+          </p>
+          <p>
+            <strong>Nacionalidade: </strong>
+            <%= nacionalidade%>
+          </p>
+          <p>
+            <strong>Naturalidade: </strong>
+            <%= naturalidade%>
+          </p>
+          <p>
+            <strong>CEP: </strong>
+            <%= cep%>
+          </p>
+          <p>
+            <strong>Estado: </strong>
+            <%= estado%>
+          </p>
+          <p>
+            <strong>Cidade: </strong>
+            <%= cidade%>
+          </p>
+          <p>
+            <strong>Número: </strong>
+            <%= numero%>
+          </p>
+        </div>
+      </div>
+      <div style='margin-top: 20px; float:left;'>
+        <a class="btn btn-success" href="/atualizar/<%= id %>">Editar</a>
+        <a class="btn btn-danger" href="/excluir/<%= id %>">Excluir</a>
+        <a class="btn btn-primary" href="/">Voltar ao início</a>
+      </div>
+    </div>
+
+    <script>
+      $('#alerta').delay(2000).fadeOut(800);
+    </script>
+</body>
+
+<%- include ('partials/footer.ejs') %>
+
+
+</html>
